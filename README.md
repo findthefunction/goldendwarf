@@ -13,6 +13,12 @@ Machine Learning and Cryptocurrency
 - Twitter (coin sentiment analysis) 
 - Cryptowatch API
 
+## Data storage and software deployment
+- MongoDB
+- Flask
+- Kubernetes
+- Docker
+
 ## Questions we hope to answer 
 - Whether our created machine learning model is viable in accurately predicting cryptocurrency price movements more than 50% of the time (better than flipping a coin). 
 - Can this model be successful in feeding information to a well-operating trading bot.
@@ -22,4 +28,3 @@ Machine Learning and Cryptocurrency
     -   Discord - Library server for communications
         - Make sure and use appropraite channels for discussion.
     - Slack class channel
-    
