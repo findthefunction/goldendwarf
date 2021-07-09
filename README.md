@@ -6,7 +6,7 @@ Machine Learning and Cryptocurrency
     - Building a trading bot that pulls multiple forms of data (time series analysis, sentiment analysis, etc) to determine buy/sell signals. 
 
 ## Reason Why 
-- Applying neural network fundamentals & data analytics knowledge to create a real-time automated machine that generates alpha through trading cryptocurrency.
+- Applying neural network fundamentals & data analytics knowledge, to create a real-time automated machine that generates alpha through trading cryptocurrency.
 
 ## Data Source 
 - Yahoo finance real-time market data (yfinance)
