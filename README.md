@@ -16,3 +16,10 @@ Machine Learning and Cryptocurrency
 ## Questions we hope to answer 
 - Whether our created machine learning model is viable in accurately predicting cryptocurrency price movements more than 50% of the time (better than flipping a coin). 
 - Can this model be successful in feeding information to a well-operating trading bot.
+
+## Communication Protocols
+    -   Github projects for tasks to be completed and who is assigned to complete.
+    -   Discord - Library server for communications
+        - Make sure and use appropraite channels for discussion.
+    - Slack class channel
+    
