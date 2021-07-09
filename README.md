@@ -26,5 +26,5 @@ Machine Learning and Cryptocurrency
 ## Communication Protocols
 -   Github projects for tasks to be completed and who is assigned to complete.
 -   Discord - Library server for communications
-    -   Make sure and use appropraite channels for discussion.
+    -   Make sure and use appropriate channels for discussion.
 -   Slack class channel
