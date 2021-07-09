@@ -24,7 +24,7 @@ Machine Learning and Cryptocurrency
 - Can this model be successful in feeding information to a well-operating trading bot.
 
 ## Communication Protocols
-    -   Github projects for tasks to be completed and who is assigned to complete.
-    -   Discord - Library server for communications
-        - Make sure and use appropraite channels for discussion.
-    - Slack class channel
+-   Github projects for tasks to be completed and who is assigned to complete.
+-   Discord - Library server for communications
+    -   Make sure and use appropraite channels for discussion.
+-   Slack class channel
