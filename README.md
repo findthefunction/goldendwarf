@@ -28,3 +28,4 @@ Machine Learning and Cryptocurrency
 -   Discord - Library server for communications
     -   Make sure and use appropriate channels for discussion.
 -   Slack class channel
+-   
