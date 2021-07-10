@@ -3,15 +3,15 @@ Machine Learning and Cryptocurrency
 
 ## Selected Topic 
 - Cryptocurrency trading bot and prediction dashboard
-    - Building a trading bot that pulls multiple forms of data (time series analysis, sentiment analysis, etc) to determine buy/sell signals. 
+ - Building a trading bot that pulls multiple forms of data (time series analysis, sentiment analysis, etc) to determine buy/sell signals. 
 
 ## Reason Why 
 - Applying neural network fundamentals & data analytics knowledge, to create a real-time automated machine that generates alpha through trading cryptocurrency.
 
 ## Data Source 
-- Yahoo finance real-time market data (yfinance)
+- Yahoo finance real-time market data (Yfinance)
 - Twitter (coin sentiment analysis) 
-- Cryptowatch API
+- Cryptowatch API.
 
 ## Data storage and software deployment
 - MongoDB
@@ -24,8 +24,8 @@ Machine Learning and Cryptocurrency
 - Can this model be successful in feeding information to a well-operating trading bot.
 
 ## Communication Protocols
--   Github projects for tasks to be completed and who is assigned to complete.
+-   Github projects, for tasks to be completed and who is assigned to complete.
 -   Discord - Library server for communications
-    -   Make sure and use appropriate channels for discussion.
+ -  Make sure and use appropriate channels for discussion.
 -   Slack class channel
 -   
