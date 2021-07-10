@@ -1,9 +1,10 @@
-# goldendwarf
-Machine Learning and Cryptocurrency
+# Goldendwarf
+Machine Learning & Cryptocurrency
 
 ## Selected Topic 
 - Cryptocurrency trading bot and prediction dashboard
  - Building a trading bot that pulls multiple forms of data (time series analysis, sentiment analysis, etc) to determine buy/sell signals. 
+ - 
 ## Crypto Coins 
 - Bitcoin
 - Etherium 
@@ -11,11 +12,12 @@ Machine Learning and Cryptocurrency
 - DOge 
 - 
 ## Reason Why 
-- Applying neural network fundamentals & data analytics knowledge, to create a real-time automated machine that generates alpha through trading cryptocurrency.
+- Applying neural network fundamentals & data analytics knowledge, to create a real-time automated machine that generates alpha through trading cryptocurrency. 
 
 ## Data Source 
 - Yahoo finance real-time market data (Yfinance)
-- Twitter (coin sentiment analysis) 
+- Twitter (coin sentiment analysis)
+- Reddit  
 - Cryptowatch API.
 
 ## Data storage and software deployment
