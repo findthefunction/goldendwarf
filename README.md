@@ -4,7 +4,12 @@ Machine Learning and Cryptocurrency
 ## Selected Topic 
 - Cryptocurrency trading bot and prediction dashboard
  - Building a trading bot that pulls multiple forms of data (time series analysis, sentiment analysis, etc) to determine buy/sell signals. 
-
+## Crypto Coins 
+- Bitcoin
+- Etherium 
+- Lite 
+- DOge 
+- 
 ## Reason Why 
 - Applying neural network fundamentals & data analytics knowledge, to create a real-time automated machine that generates alpha through trading cryptocurrency.
 
