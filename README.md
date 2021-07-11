@@ -13,6 +13,8 @@ Machine Learning & Cryptocurrency
 ## Reason Why 
 - Applying neural network fundamentals & data analytics knowledge, to create a real-time automated machine that generates alpha through trading cryptocurrency.
 - Implementation of Java and HTML design knowledge, to create an interactive and effecient dashborad interface for trading cryptocurrency.
+- Automate the analysis and interpretation of market statistics
+- Calculate the potential market risk and execute buying/selling cryptocurrency assets
 
 ## Data Source 
 - Yahoo finance real-time market data (Yfinance)
