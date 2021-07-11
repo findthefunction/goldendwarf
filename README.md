@@ -2,7 +2,7 @@
 Machine Learning & Cryptocurrency
 
 ## Selected Topic 
-- Cryptocurrency trading bot and prediction dashboard
+- Cryptocurrency trading bot and prediction dashboard.
 - Building a trading bot that pulls multiple forms of data (time series analysis, sentiment analysis, etc) to determine buy/sell signals. 
 
 ## Crypto Coins 
