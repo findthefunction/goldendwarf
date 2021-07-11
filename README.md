@@ -19,7 +19,7 @@ Machine Learning & Cryptocurrency
 - Yahoo finance real-time market data (Yfinance)
 - Twitter (coin sentiment analysis)
 - Reddit  
-- Cryptowatch API.
+- Cryptowatch API
 
 ## Data storage and software deployment
 - MongoDB
