@@ -27,11 +27,11 @@ Machine Learning & Cryptocurrency
 - Docker
 
 ## Questions we hope to answer 
-- Whether our created machine learning model is viable, in accurately predicting cryptocurrency price movements more than 50% of the time (better than flipping a coin). 
-- Can this model be successful in feeding information to a well-operating trading bot.
+- Whether our created machine learning model is viable, in accurately predicting cryptocurrency price movements more than 50% of the time (better than flipping a coin)?
+- Can this model be successful in feeding information to a well-operating trading bot?
 
 ## Communication Protocols
--   Github projects, for tasks to be completed and who is assigned to complete.
+-   Github projects, for tasks to be completed and who is assigned to complete
 -   Discord - Library server for communications
--  Make sure and use appropriate channels for discussion.
+-   Make sure and use appropriate channels for discussion
 -   Slack class channel
