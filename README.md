@@ -37,7 +37,7 @@ Machine Learning & Cryptocurrency
 -   Discord - Library server for communications
     -   Well categorized channels to organize discussion
 -   Slack class channel
--   
+  
 ## Presentation Format
 - Live site with dashboard presenting the output of our models and current prediction status
 - Functional access to platform with interactive menus
