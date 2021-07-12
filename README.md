@@ -3,7 +3,7 @@ Machine Learning & Cryptocurrency
 
 ## Selected Topic 
 - Cryptocurrency trading bot and prediction dashboard.
-- Building a trading bot that pulls multiple forms of data (time series analysis, sentiment analysis, etc) to determine buy/sell signals. 
+- Building a trading bot that pulls multiple forms of data to determine buy/sell signals (time series analysis, sentiment analysis, etc). 
 
 ## Crypto Coins 
 - Bitcoin (BTC)
@@ -11,13 +11,13 @@ Machine Learning & Cryptocurrency
 - Cardano (ADA)
 
 ## Reason Why 
-- Applying neural network fundamentals & data analytics knowledge, to create a real-time automated machine that generates alpha through trading cryptocurrency.
-- Implementation of Java and HTML design knowledge, to create an interactive and effecient dashborad interface for trading cryptocurrency.
-- Automate the analysis and interpretation of market statistics
-- Calculate the potential market risk and execute buying/selling cryptocurrency assets
+- Applying neural network fundamentals & data analytics knowledge to create a real-time automated machine that generates alpha through trading cryptocurrency.
+- Implementation of Java and HTML design knowledge to create an interactive and effecient dashborad interface for trading cryptocurrency.
+- Automate the analysis and interpretation of market statistics.
+- Calculate potential market risk and execute buying/selling cryptocurrency assets.
 
 ## Data Source 
-- Yahoo finance real-time market data (Yfinance)
+- Yahoo finance real-time market data (yfinance)
 - Twitter (coin sentiment analysis)
 - Reddit  
 - Cryptowatch API
@@ -29,11 +29,11 @@ Machine Learning & Cryptocurrency
 - Docker
 
 ## Questions we hope to answer 
-- Whether our created machine learning model is viable, in accurately predicting cryptocurrency price movements more than 50% of the time (better than flipping a coin)?
+- Whether our created machine learning model is viable in accurately predicting cryptocurrency price movements more than 50% of the time (i.e more reliable than flipping a coin).
 - Can this model be successful in feeding information to a well-operating trading bot?
 
 ## Communication Protocols
--   Github projects, for tasks to be completed and who is assigned to complete
+-   Github projects - for identifying tasks and assigning group members to complete tasks.
 -   Discord - Library server for communications
--   Make sure and use appropriate channels for discussion
+    -   Well categorized channels to organize discussion
 -   Slack class channel
