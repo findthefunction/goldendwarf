@@ -40,4 +40,4 @@ Machine Learning & Cryptocurrency
 -   
 ## Presentation Format
 - Live site with dashboard presenting the output of our models and current prediction status
-- - Functional access to platform with interactive menus
+- Functional access to platform with interactive menus
