@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Dwarf</title>
+    <link 
+        rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"
+        rel="stylesheet" href ="static/css/style.css"
+    />
+
+</head>
+<body>
+    <div class ="container">
+        <div class ="row">
+            <div class="col-xl-12 jumbotron text-centre">
+                <h1> Crypto Hedging Dashboard</h1>
+                <p> Use information below to follow market activity</p>
+            </div> 
+        </div>
+        <!-- connect script here -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="">
+                    <h5> ..... </h5>
+                    <select id="selDataset"onchange="optionChanged(this.value)"></select>
+                </div>
+
+            </div> 
+        </div>
+        <div class="row"> ... </div>
+
+
+        {{ items }}
+       
+        
+    </div>
+    <script src="static/js/logic_GD.js"></script>
+</body>
+</html>
+
