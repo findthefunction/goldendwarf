@@ -9,7 +9,7 @@ dealing specifically with twitter data. The following three NLP libraries were a
    - rule-based model 
     - text represented as the sum of its words (i.e "bag-of-words" approach)
    - fairly simple NLP library taking in basics such as part of speech tagging, noun-phrase extraction, classification, etc.
-   *(See https://textblob.readthedocs.io/en/dev/ for info)*
+   *(See https://textblob.readthedocs.io/en/dev/)*
    
 - Vader Sentiment Model (Valence Aware Dictionary for Sentiment Reasoning)
    - rule-based model 
