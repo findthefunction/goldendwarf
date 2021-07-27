@@ -9,18 +9,21 @@ dealing specifically with twitter data. The following three NLP libraries were a
    - rule-based model 
     - text represented as the sum of its words (i.e "bag-of-words" approach)
    - fairly simple NLP library taking in basics such as part of speech tagging, noun-phrase extraction, classification, etc.
-   *(See https://textblob.readthedocs.io/en/dev/)*
+   
+ *(See https://textblob.readthedocs.io/en/dev/)*
    
 - Vader Sentiment Model (Valence Aware Dictionary for Sentiment Reasoning)
    - rule-based model 
    - empirically validated by multiple independent human judges 
    - uses word heuristics and recognizes word instensifiers, negations, etc, but cannot recognize typos (i.e overlooks misspelt words).
-   *(See Vader github https://github.com/cjhutto/vaderSentiment)*
+ 
+ *(See Vader github https://github.com/cjhutto/vaderSentiment)*
    
 - Flair Sentiment Model
    - word embedding model 
     - words recognized in the form of a real-value vector where words close in promiximity in the vector space are assumed to have similar meaning.
    - accounts for spelling errors
    - pre-trained recurrent neural network accounting for word and letter sequencing 
-   *(See Flair github https://github.com/flairNLP/flair)*
+  
+  *(See Flair github https://github.com/flairNLP/flair)*
 
