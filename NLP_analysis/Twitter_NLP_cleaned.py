@@ -1,4 +1,4 @@
-## Twitter Scraping & NLP
+#Twitter NLP
 
 import requests 
 import json
@@ -32,6 +32,7 @@ get_ipython().system('pip install gensim')
 import gensim
 from gensim.parsing.preprocessing import remove_stopwords 
 
+import plotly.express as px
 from wordcloud import WordCloud, STOPWORDS
 from PIL import Image
 from langdetect import detect
@@ -53,8 +54,10 @@ def initialize():
 api = initialize()
 
 
-# Scraping function
-def twitter_scrape():
+# ## Scrape Sentiment Score
+
+# Call on tweepy API and create dataframe
+def scrape_sentiment_score():
     
     search_words = ("bitcoin", "etherium", "cardano")
     crypto_data = pd.DataFrame()
@@ -161,3 +164,117 @@ def twitter_scrape():
     sentiment_score = round(np.mean(vader_values), 4)
     
     return sentiment_score
+
+
+
+## Plotly Graph
+
+# Function for creating the Plotly Graph
+def plotly_graph():
+
+    search_words = ("bitcoin", "etherium", "cardano")
+    crypto_data = pd.DataFrame()
+    
+    def get_data(data):
+        data = {
+            'text': data.full_text,
+            'date': data.created_at,
+            'followers': data.user.followers_count,
+            'favourites': data.user.favourites_count,
+            'retweets': data.retweet_count
+        }
+        return data
+    
+    for tweets in search_words:
+        comp_tweets = api.search(q=tweets, lang = 'en', result_type = 'recent', count=250, tweet_mode='extended')
+        
+        for tweet in comp_tweets:
+            row = get_data(tweet)
+            crypto_data = crypto_data.append(row, ignore_index=True)
+            
+    # Formatting
+    # Keep only tweets with over 1000 favourites
+    crypto_data = crypto_data.loc[crypto_data['favourites']>1000]
+    
+    # Clean text column using Regex
+    crypto_data['cleaned_text'] = crypto_data['text']
+    clean_text = '(RT) @[\w]*:|(@[A-Za-z0-9]+)|([^\,\!\.\'\%0-9A-Za-z \t])|(\w+:\/\/\S+)'
+    crypto_data['cleaned_text'] = crypto_data['cleaned_text'].str.replace(clean_text, " ", regex=True)
+    crypto_data['cleaned_text'] = crypto_data['cleaned_text'].str.lower()
+        
+    # Convert date dtype to datetime, set index, sort index and drop duplicates
+    crypto_data['date'] = pd.to_datetime(crypto_data['date'])
+    crypto_data = crypto_data.set_index('date').sort_index(ascending=False)
+    crypto_data.drop_duplicates(inplace=True)
+    
+    
+    # NLP - Vader Sentiment Model 
+    # Sentiment labels function 
+    
+    sia = SentimentIntensityAnalyzer()
+    
+    def sentiment_labels(df, feature, value): 
+        df.loc[df[value] > 0,feature] = 'positive'
+        df.loc[df[value] == 0,feature] = 'neutral'
+        df.loc[df[value] < 0,feature] = 'negative'
+    
+    def vader_sentiment(df):
+        target_col='cleaned_text'
+        prefix = 'vader_clean_'
+        
+        scores_col=prefix+'scores'
+        compound_col = prefix+'polarity'
+        sentiment = prefix+'sentiment'
+        
+        df[scores_col] = df[target_col].apply(lambda x:sia.polarity_scores(x))
+        df[compound_col] = df[scores_col].apply(lambda d: d['compound'])
+        sentiment_labels(df, sentiment, compound_col)
+    
+    # Execute Vader Function
+    vader_sentiment(crypto_data)
+    
+    #Assign polarity scores to a variable
+    vader_values = crypto_data.loc[:, 'vader_clean_polarity']
+    
+    positive = []
+    neutral = []
+    negative = []
+    
+    for values in vader_values:
+        if values > 0:
+            positive.append(values)
+        
+        elif values < 0:
+            negative.append(values)
+            
+        else:
+            neutral.append(values)
+        
+    # Store pos/neg/neu polarity average scores           
+    positive_score = round(np.mean(positive), 2)
+    neutral_score = round(np.mean(neutral), 2)
+    negative_score = round(np.mean(negative), 2)
+        
+    # Create a df with avg polarity scores and reformat to prepare for df merging
+    scores = positive_score, neutral_score, negative_score
+    scores_df = pd.DataFrame(scores)
+        
+    scores_df = scores_df.rename(index={0: 'positive', 1: 'neutral', 2: 'negative'}).reset_index()
+    scores_df = scores_df.rename(columns={'index': 'Sentiment', 0: 'Average Polarity'})
+        
+    # Create a df for tweet counts for pos/neg/neu sentiment
+    vader_values_plot = pd.DataFrame(crypto_data['vader_clean_sentiment'].value_counts()).reset_index()
+    vader_values_plot = vader_values_plot.rename(columns={'index': 'Sentiment', 'vader_clean_sentiment': 'Number of Tweets'})
+        
+    # Merge dfs
+    sentiment_df = pd.merge(vader_values_plot, scores_df, on=['Sentiment', 'Sentiment'], how='left')
+        
+    # Create graph
+    fig = px.bar(sentiment_df, x='Sentiment', y='Number of Tweets', title='Twitter Cryptocurrency Sentiment (BTC, ADA, ETH)', hover_data=['Sentiment', 'Number of Tweets', 'Average Polarity'], color='Average Polarity')
+    plotly_graph = fig.show()
+        
+    return plotly_graph
+
+
+
+
