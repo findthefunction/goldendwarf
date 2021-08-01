@@ -1,6 +1,10 @@
 # Goldendwarf
 Machine Learning & Cryptocurrency
 
+## Google Slides Presentation
+
+- https://docs.google.com/presentation/d/124W2VgxM6cSDz5dqoKisK2hXoikAnP9mSJqux85g4EY/edit?usp=sharing
+
 ## Selected Topic 
 - Cryptocurrency trading bot and prediction dashboard.
 - Building a trading bot that pulls multiple forms of data to determine buy/sell signals (time series analysis, sentiment analysis, etc). 
