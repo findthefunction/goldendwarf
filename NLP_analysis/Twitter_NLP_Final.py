@@ -1,5 +1,4 @@
-#Twitter NLP
-
+## Twitter Scraping & NLP
 import requests 
 import json
 from config import consumer_key, consumer_secret, access_key, access_secret, bearer_token
@@ -27,8 +26,8 @@ nltk.download('averaged_perceptron_tagger')
 nltk.download('vader_lexicon')
 nltk.download('stopwords')
 nltk.download('wordnet')
+nltk.download('punkt')
 
-get_ipython().system('pip install gensim')
 import gensim
 from gensim.parsing.preprocessing import remove_stopwords 
 
@@ -38,11 +37,13 @@ from PIL import Image
 from langdetect import detect
 from sklearn.feature_extraction.text import CountVectorizer
 
+import nbformat
+
 # Display max column width 
 pd.set_option('display.max_colwidth', None)
 
 
-## Twitter API (Tweepy)
+# ## Twitter API (Tweepy)
 
 # Initialize and gain access to Twitter API
 def initialize():
@@ -54,12 +55,11 @@ def initialize():
 api = initialize()
 
 
-# ## Scrape Sentiment Score
+## Scrape Twitter Data
 
-# Call on tweepy API and create dataframe
-def scrape_sentiment_score():
+def scrape_twitter():
     
-    search_words = ("bitcoin", "etherium", "cardano")
+    search_words = ("bitcoin", "ethereum", "BNB", "NFT")
     crypto_data = pd.DataFrame()
     
     def get_data(data):
@@ -158,6 +158,16 @@ def scrape_sentiment_score():
     # Execute Vader Function
     vader_sentiment(crypto_data)
     
+    return crypto_data
+
+# Store df in a variable
+crypto_data = scrape_twitter()
+
+
+## Scrape Sentiment Score
+
+# Call on tweepy API and create dataframe
+def scrape_sentiment_score():
     
     # Get sentiment score 
     vader_values = crypto_data.loc[:, 'vader_clean_polarity']
@@ -166,73 +176,11 @@ def scrape_sentiment_score():
     return sentiment_score
 
 
-
 ## Plotly Graph
 
 # Function for creating the Plotly Graph
 def plotly_graph():
 
-    search_words = ("bitcoin", "etherium", "cardano")
-    crypto_data = pd.DataFrame()
-    
-    def get_data(data):
-        data = {
-            'text': data.full_text,
-            'date': data.created_at,
-            'followers': data.user.followers_count,
-            'favourites': data.user.favourites_count,
-            'retweets': data.retweet_count
-        }
-        return data
-    
-    for tweets in search_words:
-        comp_tweets = api.search(q=tweets, lang = 'en', result_type = 'recent', count=250, tweet_mode='extended')
-        
-        for tweet in comp_tweets:
-            row = get_data(tweet)
-            crypto_data = crypto_data.append(row, ignore_index=True)
-            
-    # Formatting
-    # Keep only tweets with over 1000 favourites
-    crypto_data = crypto_data.loc[crypto_data['favourites']>1000]
-    
-    # Clean text column using Regex
-    crypto_data['cleaned_text'] = crypto_data['text']
-    clean_text = '(RT) @[\w]*:|(@[A-Za-z0-9]+)|([^\,\!\.\'\%0-9A-Za-z \t])|(\w+:\/\/\S+)'
-    crypto_data['cleaned_text'] = crypto_data['cleaned_text'].str.replace(clean_text, " ", regex=True)
-    crypto_data['cleaned_text'] = crypto_data['cleaned_text'].str.lower()
-        
-    # Convert date dtype to datetime, set index, sort index and drop duplicates
-    crypto_data['date'] = pd.to_datetime(crypto_data['date'])
-    crypto_data = crypto_data.set_index('date').sort_index(ascending=False)
-    crypto_data.drop_duplicates(inplace=True)
-    
-    
-    # NLP - Vader Sentiment Model 
-    # Sentiment labels function 
-    
-    sia = SentimentIntensityAnalyzer()
-    
-    def sentiment_labels(df, feature, value): 
-        df.loc[df[value] > 0,feature] = 'positive'
-        df.loc[df[value] == 0,feature] = 'neutral'
-        df.loc[df[value] < 0,feature] = 'negative'
-    
-    def vader_sentiment(df):
-        target_col='cleaned_text'
-        prefix = 'vader_clean_'
-        
-        scores_col=prefix+'scores'
-        compound_col = prefix+'polarity'
-        sentiment = prefix+'sentiment'
-        
-        df[scores_col] = df[target_col].apply(lambda x:sia.polarity_scores(x))
-        df[compound_col] = df[scores_col].apply(lambda d: d['compound'])
-        sentiment_labels(df, sentiment, compound_col)
-    
-    # Execute Vader Function
-    vader_sentiment(crypto_data)
-    
     #Assign polarity scores to a variable
     vader_values = crypto_data.loc[:, 'vader_clean_polarity']
     
@@ -274,6 +222,53 @@ def plotly_graph():
     plotly_graph = fig.show()
         
     return plotly_graph
+
+## Word Cloud
+
+# Call on tweepy API and create dataframe
+def wrrrdcloud():
+    
+    # Create df 
+    df1 = crypto_data['final_clean']
+    df2 = pd.DataFrame(df1)
+    
+    # Count total number of words in all tweets
+    text = " ".join(review for review in df2.final_clean)
+    
+    # Create stopword list:
+    stopwords = set(STOPWORDS)
+    stopwords.update(["the", "a", "are", "they", "in", "we", "is", "tweet","retweet", "feg", "fegarmy", "rt"])
+    
+    # Create wordcloud background 
+    eth_mask = np.array(Image.open("ETH.png"))
+    
+    def transform_format(val):
+        if val == 0:
+            return 255
+        else:
+            return val
+    
+    # Transform your mask into a new one that will work with the function:
+    transformed_eth_mask = np.ndarray((eth_mask.shape[0],eth_mask.shape[1]), np.int32)
+    
+    for i in range(len(eth_mask)):
+        transformed_eth_mask[i] = list(map(transform_format, eth_mask[i]))
+        
+    
+    # Create a word cloud image
+    wc = WordCloud(background_color="white", max_words=1000, mask=transformed_eth_mask,
+               stopwords=stopwords, contour_width=3, contour_color='violet')
+    
+    # Generate a wordcloud
+    wc.generate(text)
+    
+    # show
+    plt.figure(figsize=[30,15])
+    plt.imshow(wc, interpolation='bilinear')
+    plt.axis("off")
+    cloud_image = plt.show()
+    
+    return cloud_image
 
 
 
