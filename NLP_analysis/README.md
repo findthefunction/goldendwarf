@@ -14,3 +14,5 @@ This section deals with the natural language processing techniques used to read 
 - See [Twitter_NLP.ipynb](https://github.com/findthefunction/goldendwarf/blob/andrew/NLP_analysis/Twitter_NLP.ipynb) to see NLP process in full. 
 - See [Twitter_NLP_Final.ipynb](https://github.com/findthefunction/goldendwarf/blob/andrew/NLP_analysis/Twitter_NLP_Final.ipynb) for condensed version of the code.
   -  note: [Twitter_NLP_Final.py](https://github.com/findthefunction/goldendwarf/blob/andrew/NLP_analysis/Twitter_NLP_Final.py) is the final refactored code used to import into the dashboard.
+  -  See [crypto_bar_graph.png](https://github.com/findthefunction/goldendwarf/blob/andrew/NLP_analysis/crypto_bar_graph.png) for a sample version of the outputted graph.
+  -  See [output.png](https://github.com/findthefunction/goldendwarf/tree/andrew/NLP_analysis) for sample wordcloud image.
