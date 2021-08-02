@@ -75,16 +75,22 @@
     <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="2004" height="846" style="display: block; height: 529px; width: 1253px;"></canvas>
     <div class="container">
         <div class="d-flex justify-content-centre row">
-            <div class="col-10">
-                <div id="line-chart">
+            <div class="col-md-5">
+                <div id="line"></div>
+                   <!-- <p>
+                        Here's a simple Plotly plot - 
+                        <a href="../Analysis Projects/Project_GoldenDwarf/static/js/plot.js">plotly.js documentation</a>
+                    </p>-->
 
-                </div>
             </div>
         </div>
     </div>
     <div data-chart="line" data-dataset-label="Duration"
         data-labels="['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']" data-dataset-data></div>
-
+    <!-- Guage-->
+    <div class="col-md-5">
+        <div id="gauge"></div>
+    </div>
     <!--Table of Coins-->
     <div class="table-responsive">
         <table class="table table-dark table-striped">
@@ -100,26 +106,26 @@
                 <tr>
                     <th scope="row">1</th>
                     <td>Bitcoin</td>
-                    <td>Otto</td>
+                    <td>49,793.31</td>
                     <td>BTC</td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
                     <td>Etherium</td>
-                    <td>Thornton</td>
+                    <td>3,187.38</td>
                     <td>ETH</td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
                     <td>Cardano</td>
-                    <td>Cardano</td>
+                    <td>1.63</td>
                     <td>ADA</td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <div class="col-md-9">
-        <table class="table table-striped">
+   <!-- <div class="col-md-9">
+        <table class="table  table-dark table-striped">
             <thead>
                 <tr>
                     <th>id</th>
@@ -133,24 +139,12 @@
             </thead>
             <tbody></tbody>
         </table>
-    </div>
+    </div> --> 
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.3.0.min.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="static/js/plot.js"></script>
-    <script type="text/javascript">
-        //chart
-        const dataline = {
-            type: 'line',
-            data: {
-                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                datasets: [
-                    {
-                        label: 'Duration',
-                        data: [],
-                    },
-                ],
-            },
-        };
-    </script>
+    
 </body>
 
 </html>
