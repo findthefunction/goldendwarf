@@ -6,7 +6,9 @@ from config import consumer_key, consumer_secret, access_key, access_secret, bea
 import pandas as pd
 import sys
 import tweepy
+import matplotlib
 import matplotlib.pyplot as plt
+matplotlib.use('Agg')
 import numpy as np
 import os
 import seaborn as sns
@@ -22,11 +24,7 @@ from nltk.corpus import stopwords
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from nltk.stem import WordNetLemmatizer 
 from nltk.corpus import wordnet
-nltk.download('averaged_perceptron_tagger')
-nltk.download('vader_lexicon')
-nltk.download('stopwords')
-nltk.download('wordnet')
-nltk.download('punkt')
+
 
 import gensim
 from gensim.parsing.preprocessing import remove_stopwords 
@@ -38,6 +36,8 @@ from langdetect import detect
 from sklearn.feature_extraction.text import CountVectorizer
 
 import nbformat
+
+import streamlit as st
 
 # Display max column width 
 pd.set_option('display.max_colwidth', None)
@@ -53,7 +53,6 @@ def initialize():
     return api
 
 api = initialize()
-
 
 ## Scrape Twitter Data
 
@@ -171,7 +170,7 @@ def scrape_sentiment_score():
     
     # Get sentiment score 
     vader_values = crypto_data.loc[:, 'vader_clean_polarity']
-    sentiment_score = round(np.mean(vader_values), 4)
+    sentiment_score = round(np.mean(vader_values), 2)
     
     return sentiment_score
 
@@ -218,10 +217,10 @@ def plotly_graph():
     sentiment_df = pd.merge(vader_values_plot, scores_df, on=['Sentiment', 'Sentiment'], how='left')
         
     # Create graph
-    fig = px.bar(sentiment_df, x='Sentiment', y='Number of Tweets', title='Twitter Cryptocurrency Sentiment (BTC, ADA, ETH)', hover_data=['Sentiment', 'Number of Tweets', 'Average Polarity'], color='Average Polarity')
-    plotly_graph = fig.show()
+    fig = px.bar(sentiment_df, x='Sentiment', y='Number of Tweets', title='Twitter Cryptocurrency Sentiment', hover_data=['Sentiment', 'Number of Tweets', 'Average Polarity'], color='Average Polarity')
+    #plotly_graph = fig.show()
         
-    return plotly_graph
+    return fig
 
 ## Word Cloud
 
@@ -263,12 +262,12 @@ def wrrrdcloud():
     wc.generate(text)
     
     # show
-    plt.figure(figsize=[30,15])
+    plt.figure(figsize=[15,10])
     plt.imshow(wc, interpolation='bilinear')
     plt.axis("off")
-    cloud_image = plt.show()
-    
-    return cloud_image
+    #plt.show()
+
+    st.pyplot()
 
 
 
