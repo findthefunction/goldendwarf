@@ -150,8 +150,17 @@ if choice == 'Price Forecast':
 elif choice == 'Twitter Sentiment':
 
     st.write("# Cryptocurrency and Machine Learning")
+
+    about_bar2 = st.beta_expander("About This Section:")
+
+    about_bar2.markdown("""
+    * The images below represent our NLP analysis on recent Twitter data in the following ways:
+        - Bar chart representing the number of positive, negative and neutral tweets with average polarity scores for each sentiment. 
+        - Average overall sentiment score in the market based on tweets.
+        - A word cloud image containing token words from the analysis.
+    """)
     
-    st.write("## Market Sentiment")
+    st.write("## Market Sentiment and NLP")
     
     # Set columns
     #col1, col2 = st.beta_columns((9,1))
