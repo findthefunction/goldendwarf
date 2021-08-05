@@ -65,34 +65,34 @@ def forecast(selection):
 # Get database for cryptocurrency
 def get_df(symbol, interval = '1m'):
 
-    pp.get_bars(symbol)
+    # pp.get_bars(symbol)
 
-    # Initialize PyMongo to work with MongoDBs
-    conn = 'mongodb://localhost:27017'
-    client = pymongo.MongoClient(conn)
+    # # Initialize PyMongo to work with MongoDBs
+    # conn = 'mongodb://localhost:27017'
+    # client = pymongo.MongoClient(conn)
     
-    #select database
-    db = client['crypto_db']
-    #select the collection within the database
-    df_data = db.items
+    # #select database
+    # db = client['crypto_db']
+    # #select the collection within the database
+    # df_data = db.items
     
-    #convert entire collection to Pandas dataframe
-    df = pd.DataFrame(list(df_data.find()))
-    df = df.drop(columns = ['open_time','o', 'h', 'l', 'c', 'v', 'index', 'ignore', '_id', 'time'])
-    df = df.sort_values(by=['ds'], ascending=False)
+    # #convert entire collection to Pandas dataframe
+    # df = pd.DataFrame(list(df_data.find()))
+    # df = df.drop(columns = ['open_time','o', 'h', 'l', 'c', 'v', 'index', 'ignore', '_id', 'time'])
+    # df = df.sort_values(by=['ds'], ascending=False)
 
-    # # Access API and reformat
-    # root_url = 'https://api.binance.com/api/v1/klines'
-    # url = root_url + '?symbol=' + symbol + '&interval=' + interval
-    # data = json.loads(requests.get(url).text)
-    # df = pd.DataFrame(data)
-    # df.columns = ['open_time',
-    #              'o', 'h', 'l', 'c', 'v',
-    #              'close_time', 'qav', 'num_trades',
-    #              'taker_base_vol', 'taker_quote_vol', 'ignore']
-    # df.index = [dt.datetime.fromtimestamp(x/1000.0) for x in df.close_time]
-    # df = df.reset_index()
-    # df = df.rename(columns={"index":"ds","open_time": "time", "o": "open", "h":"high", "l":"low", "c":"y", "v":"volume"})
+    # Access API and reformat
+    root_url = 'https://api.binance.com/api/v1/klines'
+    url = root_url + '?symbol=' + symbol + '&interval=' + interval
+    data = json.loads(requests.get(url).text)
+    df = pd.DataFrame(data)
+    df.columns = ['open_time',
+                 'o', 'h', 'l', 'c', 'v',
+                 'close_time', 'qav', 'num_trades',
+                 'taker_base_vol', 'taker_quote_vol', 'ignore']
+    df.index = [dt.datetime.fromtimestamp(x/1000.0) for x in df.close_time]
+    df = df.reset_index()
+    df = df.rename(columns={"index":"ds","open_time": "time", "o": "open", "h":"high", "l":"low", "c":"y", "v":"volume"})
     #df_isolated = pd.DataFrame(df, columns = ['ds', 'y'])
 
     #df_isolated.to_csv(r'coin_price_action.csv', mode = 'w', header = True, index=False)
@@ -101,35 +101,35 @@ def get_df(symbol, interval = '1m'):
     return df 
 
 
-# def dfdata(selection):
+def dfdata(selection):
 
-#     if selection == ADA:
-#         coin = ('ADABUSD')
-#         title = "Cardano Price Action"
+    if selection == ADA:
+        coin = ('ADABUSD')
+        title = "Cardano Price Action"
 
-#     if selection == BTC:
-#         coin = ('BTCBUSD')
-#         title = "Bitcoin Price Action"
+    if selection == BTC:
+        coin = ('BTCBUSD')
+        title = "Bitcoin Price Action"
 
-#     if selection == ETH:
-#         coin = ('ETHBUSD')
-#         title = "Etherium Price Action"
+    if selection == ETH:
+        coin = ('ETHBUSD')
+        title = "Etherium Price Action"
 
-#     if selection == DOT:
-#         coin = ('DOTBUSD')
-#         title = "Polkadot Price Action"
+    if selection == DOT:
+        coin = ('DOTBUSD')
+        title = "Polkadot Price Action"
 
-#     if selection == DOGE:
-#         coin = ('DOGEBUSD')
-#         title = "Dogecoin Price Action"
+    if selection == DOGE:
+        coin = ('DOGEBUSD')
+        title = "Dogecoin Price Action"
 
-#     if selection == BNB:
-#         coin = ('BNBBUSD')
-#         title = "Binance Coin Price Action"
+    if selection == BNB:
+        coin = ('BNBBUSD')
+        title = "Binance Coin Price Action"
 
-#     dataf = get_df(coin)
+    dataf = get_df(coin)
 
-#     return dataf
+    return dataf
 
 # Create Sidebar 
 menu = ['Price Forecast', 'Twitter Sentiment']
@@ -158,7 +158,7 @@ if choice == 'Price Forecast':
     
 
     st.write("## Database powering the graph above")
-    df = get_df(select_series)
+    df = dfdata(select_series)
     st.dataframe(df)
 
 
