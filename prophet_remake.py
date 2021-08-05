@@ -20,6 +20,9 @@ import datetime as dt
 
 import streamlit as st
 
+import pymongo
+from pymongo import MongoClient
+
 def get_bars(symbol, interval = '1m'):
     
     # Access API and reformat
@@ -43,63 +46,78 @@ def get_bars(symbol, interval = '1m'):
     m = Prophet(changepoint_prior_scale=0.01, daily_seasonality=True).fit(df_isolated)
     future = m.make_future_dataframe(periods=30, freq='1min')
     fcst = m.predict(future)
-    
-    # Create traces for interactive plotly graph
-    trace = go.Scatter(
-    name = 'Actual price',
-    mode = 'markers',
-    x = list(fcst['ds']),
-    y = list(df_isolated['y']),
-    marker=dict(
-        color='#FFBAD2',
-        line=dict(width=1)
-    ))
-    
-    trace1 = go.Scatter(
-    name = 'predict',
-    mode = 'lines',
-    x = list(fcst['ds']),
-    y = list(fcst['yhat']),
-    marker=dict(
-        color='red',
-        line=dict(width=3)
-    ))
-    
-    upper_band = go.Scatter(
-    name = 'upper band',
-    mode = 'lines',
-    x = list(fcst['ds']),
-    y = list(fcst['yhat_upper']),
-    line= dict(color='#57b88f'),
-    fill = 'tonexty'
-    )
-    
-    lower_band = go.Scatter(
-    name= 'lower band',
-    mode = 'lines',
-    x = list(fcst['ds']),
-    y = list(fcst['yhat_lower']),
-    line= dict(color='#1705ff'))
-    
-    tracex = go.Scatter(
-    name = 'Actual price',
-    mode = 'markers',
-    x = list(df1['ds']),
-    y = list(df1['y']),
-    marker=dict(
-        color='black',
-        line=dict(width=2)
-   ))
-    
-    data = [tracex, trace1, lower_band, upper_band, trace]
-    
-    layout = dict(title='Price Prediction Using Prophet',
-             xaxis=dict(title = 'Dates', ticklen=2, zeroline=True))
 
+    # Initialize PyMongo to work with MongoDBs
+    conn = 'mongodb://localhost:27017'
+    client = pymongo.MongoClient(conn)
     
+    # Define database and collection
+    # Name & create mongo database (i.e nhl_db in this case)
+    # Create variable for collection within your mongo database 
+    db = client.crypto_db
+    collection = db.items
+    
+    #Reformat
+    mongo_df = df.to_dict('records')
+    
+    #Load dictionary into mongo db
+    collection.insert_many(mongo_df)
+
+    # Create graph
     figure = plot_plotly(m, fcst)
-    
     return figure 
+    
+#     # Create traces for interactive plotly graph
+#     trace = go.Scatter(
+#     name = 'Actual price',
+#     mode = 'markers',
+#     x = list(fcst['ds']),
+#     y = list(df_isolated['y']),
+#     marker=dict(
+#         color='#FFBAD2',
+#         line=dict(width=1)
+#     ))
+    
+#     trace1 = go.Scatter(
+#     name = 'predict',
+#     mode = 'lines',
+#     x = list(fcst['ds']),
+#     y = list(fcst['yhat']),
+#     marker=dict(
+#         color='red',
+#         line=dict(width=3)
+#     ))
+    
+#     upper_band = go.Scatter(
+#     name = 'upper band',
+#     mode = 'lines',
+#     x = list(fcst['ds']),
+#     y = list(fcst['yhat_upper']),
+#     line= dict(color='#57b88f'),
+#     fill = 'tonexty'
+#     )
+    
+#     lower_band = go.Scatter(
+#     name= 'lower band',
+#     mode = 'lines',
+#     x = list(fcst['ds']),
+#     y = list(fcst['yhat_lower']),
+#     line= dict(color='#1705ff'))
+    
+#     tracex = go.Scatter(
+#     name = 'Actual price',
+#     mode = 'markers',
+#     x = list(df1['ds']),
+#     y = list(df1['y']),
+#     marker=dict(
+#         color='black',
+#         line=dict(width=2)
+#    ))
+    
+#     data = [tracex, trace1, lower_band, upper_band, trace]
+    
+#     layout = dict(title='Price Prediction Using Prophet',
+#              xaxis=dict(title = 'Dates', ticklen=2, zeroline=True))
 
     #figure=dict(data=data,layout=layout)
     #plt.savefig('btc03.png')
