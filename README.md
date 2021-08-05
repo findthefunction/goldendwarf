@@ -1,5 +1,5 @@
 # Goldendwarf
-Machine Learning & Cryptocurrency
+Utilizing machine learning and natural language processing techniques to predict future price movements of cryptocurrencies (and stocks) as well as gauging social sentiment of the crypto universe.
 
 ## Google Slides Link
 - [Presentation](https://docs.google.com/presentation/d/124W2VgxM6cSDz5dqoKisK2hXoikAnP9mSJqux85g4EY/edit?usp=sharing)
