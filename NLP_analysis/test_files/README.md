@@ -15,7 +15,7 @@ dealing specifically with twitter data. The following three NLP libraries were a
 - Vader Sentiment Model (Valence Aware Dictionary for Sentiment Reasoning)
    - rule-based model 
    - empirically validated by multiple independent human judges 
-   - built in heuristics to recognize many syntactical elements such as word intensifiers, negations, conventional use of punctuation, a wide variety of slang typically used in social media contexts, and utf-8 encoded emojis
+   - built in heuristics to recognize many syntactical elements such as word intensifiers, negations, conventional use of punctuation, a wide variety of slang typically used in social media contexts, utf-8 encoded emojis, etc
    - cannot recognize some typos in text (i.e will overlook misspelt words).
  
  *(See Vader github https://github.com/cjhutto/vaderSentiment)*
