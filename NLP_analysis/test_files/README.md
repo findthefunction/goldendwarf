@@ -2,7 +2,7 @@
 
 The above files were used to test different NLP libraries on a mock kaggle dataset (see Cleaned_Bitcoin_tweets.csv). As there is a lull-period to gain API access to Twitter, this dataset was used to help develop a data pre-processing approach as well as NLP strategy for the project. 
 
-The first file (See[NLP_practice.ipynb](https://github.com/findthefunction/goldendwarf/blob/andrew/NLP_analysis/test_files/NLP_practice.ipynb)) deals with data preprocessing and saves the cleaned data into a new dataframe with clean tweets. The second file (See [Twitter_NLP_Kaggle_Data.ipynb](https://github.com/findthefunction/goldendwarf/blob/andrew/NLP_analysis/test_files/Twitter_NLP_Kaggle_Data.ipynb) analyzes a number of the popular natural language processing libraries and their effectiveness when 
+The first file (See [NLP_practice.ipynb](https://github.com/findthefunction/goldendwarf/blob/andrew/NLP_analysis/test_files/NLP_practice.ipynb)) deals with data preprocessing and saves the cleaned data into a new dataframe with clean tweets. The second file (See [Twitter_NLP_Kaggle_Data.ipynb](https://github.com/findthefunction/goldendwarf/blob/andrew/NLP_analysis/test_files/Twitter_NLP_Kaggle_Data.ipynb) analyzes a number of the popular natural language processing libraries and their effectiveness when 
 dealing specifically with twitter data. The following three NLP libraries were analzyed, utilizing several different parameters in each to analyze the models' effectiveness. All three models were then compared to determine which would be best suited for the project:
 
 - Blob Sentiment Model
