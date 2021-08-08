@@ -2,7 +2,7 @@
 This section deals with the natural language processing techniques used to read in cryptocurrency sentiment based on popular, recent tweets from twitter. 
 
 ## Approach 
-- Tweets are scraped using the Twitter API and executed through the tweepy module.
+- Tweets are scraped using the Twitter API and executed through the Tweepy Python library.
 - Vader Sentiment library is used for sentiment analysis yielding a score between -1 (negative) to 1 (positive).
     -  See [test_files folder](https://github.com/findthefunction/goldendwarf/tree/andrew/NLP_analysis/test_files) for more info on the VADER library
 - Tweets are cleaned using Regular Expression and tokenized with built-in nltk functions 
