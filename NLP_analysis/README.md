@@ -23,7 +23,6 @@ This section deals with the natural language processing techniques used to read 
 - Cons 
     - Can't always recognize typos and will rule such words as out-of-vocabulary words.
     - A pre-trained model - less malleable vs creating a custom model
-
 - Decison-making process
     - See See [test_files folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP_analysis/test_files) for comparative analysis of sentiment models.
 
