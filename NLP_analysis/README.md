@@ -19,7 +19,7 @@ This section deals with the natural language processing techniques used to read 
 - A bar chart is outputted reflecting total number of tweets and average polarity scores for each sentiment category (ie positive, negative, neutral).
 - Word cloud visualization is also outputted.
 
-# Files 
+## Files 
 - See [Twitter_NLP.ipynb](https://github.com/findthefunction/goldendwarf/blob/main/NLP_analysis/Twitter_NLP.ipynb) to see NLP process in full. 
 - See [Twitter_NLP_Final.ipynb](https://github.com/findthefunction/goldendwarf/blob/main/NLP_analysis/Twitter_NLP_Final.ipynb) for condensed version of the code and wordcloud addition
   -  note: [Twitter_NLP_Final.py](https://github.com/findthefunction/goldendwarf/blob/main/Dashboard/Twitter_NLP_Final.py) is the final refactored code used to import into the dashboard.
