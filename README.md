@@ -28,6 +28,13 @@ Utilizing machine learning and natural language processing techniques to predict
 - Database 
     - MongoDB for data storage (for future referencing and retrieving relevant tables for the interactive dashboard).
 
+*See sample price-action data stored in MongoDB below (visualized as a DF using Streamlit)*
+
+<img width="697" alt="Screen Shot 2021-08-08 at 6 06 22 PM" src="https://user-images.githubusercontent.com/79600550/128647113-6a8514d8-6fbe-4a0d-9341-911b9e4af6cd.png">
+
+<img width="699" alt="Screen Shot 2021-08-08 at 6 06 36 PM" src="https://user-images.githubusercontent.com/79600550/128647115-37def003-75c0-4557-8bb2-656caacc0f86.png">
+
+
 ## Dashboard 
 - Check out our [Demo Video](https://www.youtube.com/watch?v=7wdJV34Jdxc&t=2s) to see how the interactive dashboard operates. 
 - Created using Streamlit and Plotly, the interactive dashboard displays price forecasting of selected coins and social sentiment scores of the cryptocurrency market in real-time.
