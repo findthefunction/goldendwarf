@@ -52,15 +52,15 @@ def get_bars(symbol, interval = '1m'):
     client = pymongo.MongoClient(conn)
     
     # Define database and collection
-    # Name & create mongo database (i.e nhl_db in this case)
-    # Create variable for collection within your mongo database 
+    # Name & create mongo database (i.e crypto_db)
+    # Create variable for collection within mongo database 
     db = client.crypto_db
     collection = db.items
     
     #Reformat
     mongo_df = df.to_dict('records')
     
-    #delete all data from collection
+    # Delete all data from collection
     collection.remove({})
 
     #Load dictionary into mongo db
