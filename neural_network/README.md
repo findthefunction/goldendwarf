@@ -44,12 +44,19 @@ that could introduce complications. Prophet handles missing values and outliers 
 
 ## Bi-Direction Neural Network
 
-We developed a functional RNN that was able to gain desirably high accuracy scores.  The limits of this model came down to time and processing data.
-In order to input data into the RNN the data needed to be processed, split and balanced which typically took 15-20 seconds depending on the size of dataset.
-Preprocessing the data then gave us a dataset that was not directly interpretable quickly.  Once the model was run the data needed to be interpreted again to integrate it into 
-the dashboard and presented in a format that could be utilized for real time trading actions.  
+We developed a functional RNN that was able to gain desirably high accuracy scores. 
 
 ![image](https://user-images.githubusercontent.com/31022640/128648041-335e2bca-e386-421c-b994-fe70f62df44c.png)
+
+The limits of this model came down to time and processing data.
+In order to input data into the RNN the data needed to be processed, split and balanced which typically took 15-20 seconds depending on the size of dataset.
+Preprocessing the data then gave us a dataset that was not directly interpretable quickly.  
+
+![image](https://user-images.githubusercontent.com/31022640/128648112-055e516b-6304-4194-ba80-6325435358d0.png)
+
+Once the model was run the data needed to be interpreted again to integrate it into 
+the dashboard and presented in a format that could be utilized for real time trading actions.  
+
 
 Future iterations of the buy/ sell signal generation capability of project Goldendwarf will include newly available auto-regressive recursive neural network from DEEPar,
 This is a project that has been developed by Amazon.  The options for this project are limitless and due to the earth rotation in our solar system we elected to present our
