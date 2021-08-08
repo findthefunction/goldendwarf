@@ -5,7 +5,8 @@ This section deals with the natural language processing techniques used to read 
 ### Data & Data Preprocessing
 - Tweets are scraped using the Tweepy Python library (connected to Twitter developer account).
     -   Filtered for most recent tweets with > 1000 favourites minimum.
-- Tweets are organized into a Pandas Dataframe and cleaned using Regular Expression and tokenized using built-in nltk functions.
+- Tweets are organized into a Pandas Dataframe and cleaned using Regular Expression
+- Tokenized using built-in nltk functions.
 
 ### Model
 - Vader Sentiment library is used for sentiment analysis yielding a score between -1 (negative) to 1 (positive).
