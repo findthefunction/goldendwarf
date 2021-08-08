@@ -14,11 +14,11 @@ Utilizing machine learning and natural language processing techniques to predict
 
 ## Analysis 
 ### Components
-- Machine Learning (See the [neural_network folder](https://github.com/findthefunction/goldendwarf/tree/main/neural_network) for code): 
+- Machine Learning (See the [neural_network folder](https://github.com/findthefunction/goldendwarf/tree/main/neural_network) for further description & code): 
     - FB Prophet: Using Facebook's FBProphet machine learning library to forecast crypto price-movement in real-time.
     - Bi-Directional RNN: Training our own bi-directional recurrent neural network for greater improvements in predictive accuracy (currently in production).
     
-- Natural Language Processing (See the [NLP_analysis folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP_analysis) and [NLP Wordcloud folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP%20Wordcloud) for code):
+- Natural Language Processing (See the [NLP_analysis folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP_analysis) and [NLP Wordcloud folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP%20Wordcloud) for further description & code):
     - Scraping and analyzing relevant twitter data to develop a cryptocurrency social sentiment score in real-time.
 
 ### Data & Data Storage 
