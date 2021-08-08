@@ -27,6 +27,7 @@ Utilizing machine learning and natural language processing techniques to predict
     -  Tweepy Library (Twitter API)
 - Database 
     - MongoDB for data storage (for future referencing and retrieving relevant tables for the interactive dashboard).
+    - Data is updated every time a new coin is selected.
 
 *See sample price-action data stored in MongoDB below (visualized as a dataframes using Streamlit)*
 
