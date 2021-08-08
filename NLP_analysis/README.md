@@ -4,7 +4,7 @@ This section deals with the natural language processing techniques used to read 
 ## Approach 
 ### Data & Data Preprocessing
 - Tweets are scraped using the Tweepy Python library (connected to Twitter developer account).
-    -   Filtered for most recent tweets with <1000 favourites minimum.
+    -   Filtered for most recent tweets with more than 1000 favourites minimum.
 - Tweets are organized into a Pandas Dataframe and cleaned using Regular Expression and tokenized using built-in nltk functions.
 
 ### Model
