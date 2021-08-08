@@ -31,8 +31,9 @@ Utilizing machine learning and natural language processing techniques to predict
 ## Data storage and software deployment
 - MongoDB
 - Flask
-- Kubernetes
-- Docker
+- Streamlit
+- Prophet
+- Pystan
 
 ## Questions we hope to answer 
 - Whether our created machine learning model is viable in accurately predicting cryptocurrency price movements more than 50% of the time (i.e more reliable than flipping a coin).
