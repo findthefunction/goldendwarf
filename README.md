@@ -1,52 +1,36 @@
-# Goldendwarf
+# Project Goldendwarf
 Utilizing machine learning and natural language processing techniques to predict future price movements of cryptocurrencies (and stocks) as well as gauging social sentiment of the crypto universe.
 
-## Google Slides Link
-- [Presentation](https://docs.google.com/presentation/d/124W2VgxM6cSDz5dqoKisK2hXoikAnP9mSJqux85g4EY/edit?usp=sharing)
+## Purpose
+- Applying neural network fundamentals & data analytics knowledge to forecast price action in the cryptocurrency space. 
+- Outputs from analysis would collectively help determine potetial market risk in the buying/selling of cryptocurrency assets. Looks to the future would be directed toward using this collective analysis to feed a real-time automated machine that generates alpha through trading cryptocurrency.
 
-## Demo Video
-- [Demo Video](https://www.youtube.com/watch?v=7wdJV34Jdxc&t=2s)
+### Questions to Answer 
+- Can the model accurately predict price movement more than 50% of the time? (Is it better than flipping coin?)
+- Can the contributive analysis be successful in feeding information to a well-operating trading bot (in future development)?
+    -  Can the code be optimized sufficiently to be real-time operational (or close to it)?
+    -  Is our implementation strategy scaleable?
 
-## Selected Topic 
-- Cryptocurrency trading bot and prediction dashboard.
-- Building a trading bot that pulls multiple forms of data to determine buy/sell signals (time series analysis, sentiment analysis, etc). 
+## Analysis 
+### Components
+- Machine Learning (See the [neural_network folder](https://github.com/findthefunction/goldendwarf/tree/main/neural_network) for code): 
+    - FB Prophet: Using the Facebook's FBProphet machine learning library to forecast crypto price movement real-time.
+    - Bi-Directional RNN: Training our own bi-directional recurrent neural network for even greater improvements in accuracy (currently in production).
+    
+- NLP (Natural Language Processing - see [NLP_analysis folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP_analysis) and [NLP Wordcloud folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP%20Wordcloud) for code):
+    - Scraping and analyzing most relevant twitter data to develop a cryptocurrency social sentiment score in real-time.
 
-## Crypto Coins 
-- Bitcoin (BTC)
-- Etherium (ETH)
-- Cardano (ADA)
+### Data & Data Storage 
+- Data scraped using the following APIs:
+    -  Binanace API 
+    -  Tweepy Library (Twitter API)
+- Database 
+    - MongoDB for data storage (for referencing as well as retrieving relevant tables for the interactive dashboard) 
 
-## Reason Why 
-- Applying neural network fundamentals & data analytics knowledge to create a real-time automated machine that generates alpha through trading cryptocurrency.
-- Implementation of Java and HTML design knowledge to create an interactive and effecient dashborad interface for trading cryptocurrency.
-- Automate the analysis and interpretation of market statistics.
-- Calculate potential market risk and execute buying/selling cryptocurrency assets.
+## Dashboard 
+- Check out our [Demo Video](https://www.youtube.com/watch?v=7wdJV34Jdxc&t=2s) to see how the interactive dashboard operates. 
+- Created using Streamlit, displaying price forecasting and social sentiment scores of selected coins. 
+- Code can be referenced in the [Dashboard folder](https://github.com/findthefunction/goldendwarf/tree/main/Dashboard).
 
-## Data Source 
-- Yahoo finance real-time market data (yfinance)
-- Twitter (coin sentiment analysis)
-- Reddit  
-- Cryptowatch API
-
-## Data storage and software deployment
-- MongoDB
-- Flask
-- Streamlit
-- Prophet
-- Pystan
-
-## Questions we hope to answer 
-- Whether our created machine learning model is viable in accurately predicting cryptocurrency price movements more than 50% of the time (i.e more reliable than flipping a coin).
-- Can this model be successful in feeding information to a well-operating trading bot?
-- Can we perform predictions in (close to) real time?
--Is our implementation strategy scaleable?
-
-## Communication Protocols
--   Github projects - for identifying tasks and assigning group members to complete tasks.
--   Discord - Library server for communications
-    -   Well categorized channels to organize discussion
--   Slack class channel
-  
-## Presentation Format
-- Live site with dashboard presenting the output of our models and current prediction status
-- Functional access to platform with interactive menus
+## Google Slides
+- Follow this [link](https://docs.google.com/presentation/d/124W2VgxM6cSDz5dqoKisK2hXoikAnP9mSJqux85g4EY/edit?usp=sharing) to see our presentation slides. 
