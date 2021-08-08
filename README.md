@@ -17,19 +17,19 @@ Utilizing machine learning and natural language processing techniques to predict
     - FB Prophet: Using the Facebook's FBProphet machine learning library to forecast crypto price movement real-time.
     - Bi-Directional RNN: Training our own bi-directional recurrent neural network for even greater improvements in accuracy (currently in production).
     
-- NLP (Natural Language Processing - see [NLP_analysis folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP_analysis) and [NLP Wordcloud folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP%20Wordcloud) for code):
-    - Scraping and analyzing most relevant twitter data to develop a cryptocurrency social sentiment score in real-time.
+- Natural Language Processing (See the [NLP_analysis folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP_analysis) and [NLP Wordcloud folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP%20Wordcloud) for code):
+    - Scraping and analyzing relevant twitter data to develop a cryptocurrency social sentiment score in real-time.
 
 ### Data & Data Storage 
 - Data scraped using the following APIs:
     -  Binanace API 
     -  Tweepy Library (Twitter API)
 - Database 
-    - MongoDB for data storage (for referencing as well as retrieving relevant tables for the interactive dashboard) 
+    - MongoDB for data storage (for future referencing and retrieving relevant tables for the interactive dashboard) 
 
 ## Dashboard 
 - Check out our [Demo Video](https://www.youtube.com/watch?v=7wdJV34Jdxc&t=2s) to see how the interactive dashboard operates. 
-- Created using Streamlit, displaying price forecasting and social sentiment scores of selected coins. 
+- Created using Streamlit and Plotly, the interactive dashboard displays price forecasting of selected coins and social sentiment scores of the cryptocurrency market in real-time.
 - Code can be referenced in the [Dashboard folder](https://github.com/findthefunction/goldendwarf/tree/main/Dashboard).
 
 ## Google Slides
