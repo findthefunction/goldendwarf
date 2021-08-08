@@ -15,6 +15,17 @@ This section deals with the natural language processing techniques used to read 
     - Directed toward 'cleaned_text' column to maintain  the integrity of context, punctuation, etc. which is most beneficial for the vader library.
     - Tokenized columns used for wordcloud production.
     - Polarity scores are averaged to determine overall social sentiment score (between -1 and 1).
+- Benefits
+    - Sentiment library specifically engineered for social media/microblog contexts 
+    - Extensive array of built in heuristics to recognize many syntactical elements relevant in tweet-like contexts:
+        - word negations, intesnifiers, punctuation, word-shape, degree modifiers, initialisms and acronyms, etc
+        - strong tolerance for micro-blog-type slang and utf-8 encoded emoji recognition   
+- Cons 
+    - Can't always recognize typos and will rule such words as out-of-vocabulary words.
+    - A pre-trained model - less malleable vs creating a custom model
+
+- Decison-making process
+    - See See [test_files folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP_analysis/test_files) for comparative analysis of sentiment models.
 
 ### Visualizations 
 - A bar chart is outputted reflecting total number of tweets and average polarity scores for each sentiment category (ie positive, negative, neutral).
