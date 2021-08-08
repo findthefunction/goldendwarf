@@ -10,7 +10,7 @@ This section deals with the natural language processing techniques used to read 
 ### Model
 - Vader Sentiment library is used for sentiment analysis yielding a score between -1 (negative) to 1 (positive).
     -  See [test_files folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP_analysis/test_files) for more info on the VADER library.
-- Vader SentimentIntensityAnalyzer is used to create a polarity scores for each tweet
+- Vader SentimentIntensityAnalyzer is used to create polarity scores for each tweet
     - Directed toward 'cleaned_text' column to maintain  the integrity of context, punctuation, etc. which is most beneficial for the vader library.
     - Tokenized columns used for wordcloud production.
     - Polarity scores are averaged to determine overall social sentiment score (between -1 and 1).
