@@ -3,7 +3,8 @@ Utilizing machine learning and natural language processing techniques to predict
 
 ## Purpose
 - Applying neural network fundamentals & data analytics knowledge to forecast price action in the cryptocurrency space. 
-- Outputs from analysis would collectively help determine potetial market risk in the buying/selling of cryptocurrency assets. Looks to the future would be directed toward using this collective analysis to feed a real-time automated machine that generates alpha through trading cryptocurrency.
+- Outputs from analysis would collectively help determine potetial market risk in the buying/selling of cryptocurrency assets. 
+- Looks to the future would be directed toward using this collective analysis to feed a real-time automated machine that generates alpha through trading cryptocurrency.
 
 ### Questions to Answer 
 - Can the model accurately predict price movement more than 50% of the time? (Is it better than flipping coin?)
