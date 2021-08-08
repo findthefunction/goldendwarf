@@ -28,7 +28,7 @@ Utilizing machine learning and natural language processing techniques to predict
 - Database 
     - MongoDB for data storage (for future referencing and retrieving relevant tables for the interactive dashboard).
 
-*See sample price-action data stored in MongoDB below (visualized as a DF using Streamlit)*
+*See sample price-action data stored in MongoDB below (visualized as a dataframes using Streamlit)*
 
 <img width="697" alt="Screen Shot 2021-08-08 at 6 06 22 PM" src="https://user-images.githubusercontent.com/79600550/128647113-6a8514d8-6fbe-4a0d-9341-911b9e4af6cd.png">
 
