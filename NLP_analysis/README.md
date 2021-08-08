@@ -24,7 +24,7 @@ This section deals with the natural language processing techniques used to read 
     - Can't always recognize typos and will rule such words as out-of-vocabulary words.
     - A pre-trained model - less malleable vs creating a custom model
 - Decison-making process
-    - See See [test_files folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP_analysis/test_files) for comparative analysis of sentiment models.
+    - See [test_files folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP_analysis/test_files) for comparative analysis of sentiment models.
 
 ### Visualizations 
 - A bar chart is outputted reflecting total number of tweets and average polarity scores for each sentiment category (ie positive, negative, neutral).
