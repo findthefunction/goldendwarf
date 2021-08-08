@@ -8,7 +8,7 @@ Utilizing machine learning and natural language processing techniques to predict
 
 ### Questions to Answer 
 - Can the model accurately predict price movement more than 50% of the time? (Is it better than flipping coin?)
-- Can the contributive analysis be successful in feeding information to a well-operating trading bot (in future development)?
+- Can the contributive analysis be successful in feeding information to a well-operating trading bot (for future development)?
     -  Can the code be optimized sufficiently to be real-time operational (or close to it)?
     -  Is our implementation strategy scaleable?
 
