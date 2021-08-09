@@ -16,7 +16,8 @@ dealing specifically with twitter data. The following three NLP libraries were a
    - rule-based model 
    - empirically validated by multiple independent human judges 
    - built in heuristics to recognize many syntactical elements such as word intensifiers, negations, conventional use of punctuation, a wide variety of slang typically used in social media contexts, utf-8 encoded emojis, etc
-   - cannot recognize some typos in text (i.e will overlook misspelt words).
+   - empirically validated gold-standard list of lexical features specifically attuned to micro-blog-like texts
+      - lexical features are combined with five general rules thought to embody syntactical and grammitical conventions for the expression of sentiment and sentiment intensity within these contexts.
  
  *(See Vader github https://github.com/cjhutto/vaderSentiment)*
    
