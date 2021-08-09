@@ -7,7 +7,7 @@ Utilizing machine learning and natural language processing techniques to predict
 - Looks to the future would be directed toward using this collective analysis to feed a real-time automated machine that generates alpha through trading cryptocurrency.
 
 ### Questions to Answer 
-- Can the model accurately predict price movement more than 50% of the time? (Is it better than flipping coin?)
+- Can the model accurately predict price movement more than 50% of the time? (Is it better than flipping a coin?)
 - Can the contributive analysis be successful in feeding information to a well-operating trading bot (for future development)?
     -  Can the code be optimized sufficiently to be real-time operational (or close to it)?
     -  Is our implementation strategy scaleable?
@@ -29,7 +29,7 @@ Utilizing machine learning and natural language processing techniques to predict
     - MongoDB for data storage (for future referencing and retrieving relevant tables for the interactive dashboard).
     - Data is updated every time a new coin is selected.
 
-*See sample price-action data stored in MongoDB below (visualized as a dataframes using Streamlit)*
+*See sample price-action data stored in MongoDB below (visualized as dataframes using Streamlit)*
 
 <img width="697" alt="Screen Shot 2021-08-08 at 6 06 22 PM" src="https://user-images.githubusercontent.com/79600550/128647113-6a8514d8-6fbe-4a0d-9341-911b9e4af6cd.png">
 
