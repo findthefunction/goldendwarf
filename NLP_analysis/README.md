@@ -3,28 +3,20 @@ This section deals with the natural language processing techniques used to read 
 
 ## Approach 
 ### Data & Data Preprocessing
-- Tweets are scraped using the Tweepy Python library (connected to Twitter developer account).
-    -   Filtered for most recent tweets with > 1000 favourites minimum.
-- Tweets are organized into a Pandas Dataframe and cleaned using Regular Expression
-- Tokenized using built-in nltk functions.
+Tweets are scraped using the Tweepy Python library and organized into a Pandas Dataframe. Data is filtered for most recent tweets with > 1000 favourites minimum to help ensure relevance and influence of the tweets at hand. Tweets are then tokenized using built-in nltk functions.
 
-### Model
-- Vader Sentiment library is used for sentiment analysis yielding a score between -1 (negative) to 1 (positive).
-    -  See [test_files folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP_analysis/test_files) for more info on the VADER library.
-- Vader SentimentIntensityAnalyzer is used to create polarity scores for each tweet
-    - Directed toward 'cleaned_text' column to maintain  the integrity of context, punctuation, etc. which is most beneficial for the vader library.
-    - Tokenized columns used for wordcloud production.
-    - Polarity scores are averaged to determine overall social sentiment score (between -1 and 1).
+
+### Model - Vader Sentiment Library
+The Vader library's SentimentIntensityAnalyzer is used to create sentiment scores for each tweet, combining the scores of each sentiment (pos, neg, neu) to form a single compound score ranging between -1 and 1 (See [test_files folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP_analysis/test_files) for more info on the Vader Library). These polarity scores are then averaged to form an overall twitter cryptocurrency sentiment score. The SentimentIntensityAnalyzer is specifically directed at the 'clean_text' column - a partially cleaned column using only RegEx - in order to maintain the integrity of context, punctuation use, etc. which is beneficial to the vader library's analysis. Tokenized columns are only used for wordcloud production in this case.
+
 - Benefits
-    - Sentiment library specifically engineered for social media/microblog contexts 
-    - Extensive array of built in heuristics to recognize many syntactical elements relevant in tweet-like contexts:
-        - word negations, intesnifiers, punctuation, word-shape, degree modifiers, initialisms and acronyms, etc
+    - The Vader Sentiment library is specifically engineered for social media/microblog contexts.
+    - The library holds an extensive array of built in heuristics to recognize many syntactical elements relevant in tweet-like contexts:
+        - word negations, intensifiers, punctuation, word-shape, degree modifiers, initialisms, acronyms, etc
         - strong tolerance for micro-blog-type slang and utf-8 encoded emoji recognition   
 - Cons 
-    - Can't always recognize typos and will rule such words as out-of-vocabulary words.
-    - A pre-trained model - less malleable vs creating a custom model
-- Decison-making process
-    - See [test_files folder](https://github.com/findthefunction/goldendwarf/tree/main/NLP_analysis/test_files) for comparative analysis of sentiment models.
+    - The model can't always recognize typos and will analyze such words as out-of-vocabulary words.
+    - Vader is a pre-trained model and therefore is less malleable that creating a custom machine learning model. Creating a custom model, however, would require a subjective classification of tweets that the model would need to be trained on, and therefore could be extremely suceptible to overfitting. Furthermore, it would lack many of the complexities several of the popular sentiment models already contain, which are used extensively to determine sentiment in contexts such as twitter. This is, however, still most definitely a look toward future analysis.
 
 ### Visualizations 
 - A bar chart is outputted reflecting total number of tweets and average polarity scores for each sentiment category (ie positive, negative, neutral).
