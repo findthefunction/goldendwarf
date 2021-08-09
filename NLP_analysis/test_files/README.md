@@ -27,5 +27,5 @@ dealing specifically with twitter data. The following three NLP libraries were a
       - words recognized in the form of a real-value vector where words close in proximity in the vector space are assumed to have similar meaning.
 - accounts for spelling errors
 - pre-trained recurrent neural network accounting for word and letter sequencing 
-  
-  *(See Flair github https://github.com/flairNLP/flair)*
+
+*(See Flair github https://github.com/flairNLP/flair)*
