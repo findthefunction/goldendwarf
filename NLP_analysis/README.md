@@ -3,7 +3,7 @@ This section deals with the natural language processing techniques used to read 
 
 ## Approach 
 ### Data & Data Preprocessing
-Tweets are scraped using the Tweepy Python library and organized into a Pandas Dataframe. Data is filtered for most recent tweets with > 1000 favourites minimum to help ensure relevance and influence of the tweets at hand. Tweets are then tokenized using built-in nltk functions.
+Tweets are scraped using the Tweepy Python library and organized into a Pandas Dataframe. Data is filtered for most recent tweets with over 1000 favourites minimum to help ensure relevance and influence of the tweets at hand. Tweets are then tokenized using built-in nltk functions.
 
 
 ### Model - Vader Sentiment Library
@@ -16,11 +16,10 @@ The Vader library's SentimentIntensityAnalyzer is used to create sentiment score
         - strong tolerance for micro-blog-type slang and utf-8 encoded emoji recognition   
 - Cons 
     - The model can't always recognize typos and will analyze such words as out-of-vocabulary words.
-    - Vader is a pre-trained model and therefore is less malleable that creating a custom machine learning model. Creating a custom model, however, would require a subjective classification of tweets that the model would need to be trained on, and therefore could be extremely suceptible to overfitting. Furthermore, it would lack many of the complexities several of the popular sentiment models already contain, which are used extensively to determine sentiment in contexts such as twitter. This is, however, still most definitely a look toward future analysis.
+    - Vader is a pre-trained model and therefore is less malleable than creating a custom machine learning model. A custom model, however, would require a subjective classification of tweets that the model would need to be trained on, and therefore could be extremely susceptible to overfitting. Furthermore, it would lack many of the complexities several of the popular sentiment models already contain, which are used extensively to determine sentiment in contexts such as twitter. This is, however, still most definitely a look toward future analysis.
 
 ### Visualizations 
-- A bar chart is outputted reflecting total number of tweets and average polarity scores for each sentiment category (ie positive, negative, neutral).
-- Word cloud visualization is also outputted.
+A bar chart is outputted reflecting total number of tweets and average polarity scores for each sentiment category (ie positive, negative, neutral). A Word cloud visualization is also outputted.
 
 ## Files 
 - See [Twitter_NLP.ipynb](https://github.com/findthefunction/goldendwarf/blob/main/NLP_analysis/Twitter_NLP.ipynb) to see NLP process in full. 
