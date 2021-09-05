@@ -38,6 +38,9 @@ Utilizing machine learning and natural language processing techniques to predict
 
 ## Dashboard 
 - Check out our [Demo Video](https://www.youtube.com/watch?v=7wdJV34Jdxc&t=2s) to see how the interactive dashboard operates. 
+<a href="https://www.youtube.com/watch?v=7wdJV34Jdxc&t=2s" target="_blank"><img src="https://www.youtube.com/watch?v=7wdJV34Jdxc&t=2s" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
 - Created using Streamlit and Plotly, the interactive dashboard displays price forecasting of selected coins and social sentiment scores of the cryptocurrency market in real-time.
 - Code can be referenced in the [Dashboard folder](https://github.com/findthefunction/goldendwarf/tree/main/Dashboard).
 
