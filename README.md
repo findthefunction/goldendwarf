@@ -22,7 +22,7 @@ Utilizing machine learning and natural language processing techniques to predict
     - Scraping and analyzing relevant twitter data to develop a cryptocurrency social sentiment score in real-time.
 
 ### Data & Data Storage 
-- Data scraped using the following APIs:
+- Data accessed using the following APIs:
     -  Binanace API 
     -  Tweepy Library (Twitter API)
 - Database 
